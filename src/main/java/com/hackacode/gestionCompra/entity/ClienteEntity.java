@@ -7,9 +7,7 @@ import java.sql.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "clientes")
 public class ClienteEntity extends Persona {
