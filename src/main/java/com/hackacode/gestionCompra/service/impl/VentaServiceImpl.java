@@ -15,7 +15,7 @@ public class VentaServiceImpl implements VentaService {
     @Autowired
     private VentaRepository ventaRepository;
 
-    @Autowired
+    /*@Autowired
     private ClienteRepository clienteRepository;
 
     @Autowired
@@ -25,17 +25,17 @@ public class VentaServiceImpl implements VentaService {
     private ServicioRepository servicioRepository;
 
     @Autowired
-    private PaqueteRepository paqueteRepository;
+    private PaqueteRepository paqueteRepository;*/
 
     @Override
     public VentaEntity crearVenta(VentaDTO ventaDTO) {
         VentaEntity ventaEntity = new VentaEntity();
         ClienteEntity cliente = new ClienteEntity();
-        cliente.setIdCliente(ventaDTO.getIdCliente());
+        cliente.setId(ventaDTO.getIdCliente().toString());
         ventaEntity.setCliente(cliente);
 
         EmpleadoEntity empleado = new EmpleadoEntity();
-        empleado.setIdEmpleado(ventaDTO.getIdEmpleado());
+        empleado.setId(ventaDTO.getIdEmpleado().toString());
         ventaEntity.setEmpleado(empleado);
 
         if (ventaDTO.getIdServicio() == null) {

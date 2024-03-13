@@ -1,56 +1,25 @@
 package com.hackacode.gestionCompra.entity;
 
+import com.hackacode.gestionCompra.enums.Cargo;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.sql.Date;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
-@Table(name = "empleado")
-public class EmpleadoEntity {
+@Table(name = "empleados")
+public class EmpleadoEntity extends Persona{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_empleado")
-    private Integer idEmpleado;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Cargo cargo;
 
-    @Column(name = "nombre")
-    private String nombre;
-
-    @Column(name = "apellido")
-    private String apellido;
-
-    @Column(name = "direccion")
-    private String direccion;
-
-    @Column(name = "dni")
-    private String dni;
-
-    @Column(name = "fecha_nac")
-    private Date fechaNac;
-
-    @Column(name = "nacionalidad")
-    private String nacionalidad;
-
-    @Column(name = "celular")
-    private String celular;
-
-    @Column(name = "correo")
-    private String correo;
-
-    //@Enumerated(EnumType.STRING)
-    @Column(name = "cargo")
-    private String cargo;
-
-    @Column(name = "sueldo")
+    @Column(nullable = false)
     private Double sueldo;
-
-    @Column(name = "contrasena")
-    private String contrasena;
 
 }
