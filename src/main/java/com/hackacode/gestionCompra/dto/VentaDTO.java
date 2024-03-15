@@ -11,8 +11,8 @@ import java.sql.Date;
 @NoArgsConstructor
 public class VentaDTO {
 
-    private Integer idCliente;
-    private Integer idEmpleado;
+    private String idCliente;
+    private String idEmpleado;
     private Integer idServicio;
     private Integer idPaquete;
     private String tipo_venta;
